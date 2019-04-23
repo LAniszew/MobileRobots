@@ -1,0 +1,7 @@
+<Application x:Class="Driver.Application"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+</Application> 
+
+
+<!-- Code reduced to minimum, just need to build it, will add all the gui components and directory back when i finally mange to get this working...  -->

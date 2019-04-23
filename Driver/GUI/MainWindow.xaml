@@ -1,0 +1,17 @@
+<mui:ModernWindow x:Class="Driver.GUI.MainWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                  Title="MobileRobots" IsTitleVisible="True"
+                  LogoData=""
+                  ContentSource="/GUI/View/Home.xaml">
+   
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="Home page">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Home" Source="/GUI/View/Home.xaml" />
+                <mui:Link DisplayName="Automatic Control" Source="/GUI/View/AutomaticView.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+</mui:ModernWindow>

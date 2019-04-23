@@ -1,0 +1,250 @@
+<Page
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:Commands="clr-namespace:Driver.GUI.ViewModels" x:Class="Driver.GUI.View.ManualView"
+             mc:Ignorable="d" 
+             Title="Manual Control">
+    <Page.Resources>
+    </Page.Resources>
+    <Grid
+        HorizontalAlignment="Center" 
+        Margin="0,0,0,0" 
+        VerticalAlignment="Center">
+        <Button Content="Connect"
+            Command="{Binding Connect}" 
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Left"
+            Margin="20,0,0,20" 
+            FontSize="20" 
+            Foreground="White"
+            Background="DarkGreen"
+            Height="40"
+            Width="120"
+            BorderBrush="Black"
+            BorderThickness="2"
+            />
+        <Button Content="Disconnect"
+            Command="{Binding Disconnect}"
+            VerticalAlignment="Bottom" 
+            HorizontalAlignment="Center" 
+            Margin="0,0,0,20" 
+            FontSize="20" 
+            Foreground="White" 
+            Background="DarkRed"
+            Height="40"
+            Width="140"
+            BorderBrush="Black"
+            BorderThickness="2"
+            />
+        <TextBlock Text="STATUS:" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom" 
+            Margin="99,0,0,56" 
+            TextWrapping="Wrap" 
+            FontSize="20" 
+            Foreground="White"
+            Height="40" 
+            Width="80"
+            />
+        <TextBlock Text="DISCONNECTED" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Bottom" 
+            Margin="178,0,177,55" 
+            TextWrapping="Wrap" 
+            FontSize="20" 
+            Foreground ="Red"
+            Height="40" 
+            Width="145"
+            />
+        <Border x:Name="VL_Space"
+            BorderBrush="Black" 
+            BorderThickness="5" 
+            HorizontalAlignment="Right" 
+            Margin="0,0,81,116" 
+            VerticalAlignment="Bottom" 
+            Height="300" 
+            Width="50">
+            <ProgressBar x:Name="VL_Bar"
+            HorizontalAlignment="Right" 
+            Margin="-125,0,-125,125" 
+            VerticalAlignment="Bottom" 
+            Height="40" 
+            Width="290" 
+            ValueChanged="ProgressBar_ValueChanged"
+            Foreground="DarkGoldenrod"
+            RenderTransformOrigin="0.5,0.5"
+            >
+                <ProgressBar.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ProgressBar.RenderTransform>
+            </ProgressBar>
+        </Border>
+        <Border x:Name="VR_Space"
+            BorderBrush="Black" 
+            BorderThickness="5" 
+            HorizontalAlignment="Right" 
+            Margin="0,0,11,116" 
+            VerticalAlignment="Bottom" 
+            Height="300" 
+            Width="50">
+            <ProgressBar x:Name="VR_Bar"
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Bottom" 
+            Margin="-125,0,-125,125" 
+            Height="40" 
+            Width="290" 
+            ValueChanged="ProgressBar_ValueChanged"
+            Foreground="DarkGoldenrod"
+            RenderTransformOrigin="0.5,0.5">
+                <ProgressBar.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ProgressBar.RenderTransform>
+            </ProgressBar>
+        </Border>
+        <Border x:Name="ControllerSpace"
+            BorderBrush="Black" 
+            BorderThickness="3" 
+            HorizontalAlignment="Left" 
+            Height="40" 
+            Margin="20,20,0,0" 
+            VerticalAlignment="Top" 
+            Width="120">
+            <ComboBox x:Name="ControllerID" 
+                HorizontalAlignment="Left" 
+                Margin="0,0,0,0" 
+                VerticalAlignment="Top" 
+                Height="34" 
+                Width="114">
+                <ComboBoxItem Selected="ComboBoxItem_Selected_1"
+                    FontSize="20"
+                    Content="NULL"
+                    HorizontalAlignment="Left" 
+                    Width="120"/>
+            </ComboBox>
+        </Border>
+        <Border x:Name="CommandSpace" 
+            BorderBrush="Black" 
+            BorderThickness="3" 
+            HorizontalAlignment="Center" 
+            Height="40" 
+            Margin="145,20,235,0" 
+            VerticalAlignment="Top" 
+            Width="120">
+            <ComboBox x:Name="CommandName" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Height="34" 
+                Width="114">
+                <ComboBoxItem Selected="ComboBoxItem_Selected"
+                    FontSize="20" 
+                    Content="NULL" 
+                    HorizontalAlignment="Left" 
+                    Width="120"/>
+            </ComboBox>
+        </Border>
+        <Border x:Name="WhiteSpace" 
+            BorderBrush="White" 
+            BorderThickness="300" 
+            HorizontalAlignment="Center" 
+            Height="324" 
+            Margin="9,64,172,112" 
+            VerticalAlignment="Center" 
+            Width="319"/>
+        <TextBlock Text="0%"
+            FontSize="20" 
+            TextAlignment="Center" 
+            Foreground="White" 
+            HorizontalAlignment="Right" 
+            Margin="0,0,11,266" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Bottom" 
+            Height="30" 
+            Width="50"/>
+        <TextBlock Text="0%"
+            FontSize="20" 
+            TextAlignment="Center" 
+            Foreground="White" 
+            HorizontalAlignment="Right" 
+            Margin="0,0,81,266" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Bottom" 
+            Height="30" 
+            Width="50"/>
+        <TextBlock Text="VLeft"
+            FontSize="20" 
+            TextAlignment="Center" 
+            Foreground="White" 
+            HorizontalAlignment="Right" 
+            Margin="0,53,84,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Height="30" 
+            Width="50"/>
+        <TextBlock Text="VRight"
+            FontSize="20" 
+            TextAlignment="Left" 
+            Foreground="White" 
+            HorizontalAlignment="Right" 
+            Margin="0,53,9,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Height="30" 
+            Width="60" />
+        <Border x:Name="BatteryAddSpace" 
+            BorderBrush="Black" 
+            BorderThickness="5" 
+            Margin="485,11,7,469"/>
+        <Border x:Name="BatterySpace" 
+            BorderBrush="Black" 
+            BorderThickness="3" 
+            Margin="344,3,14,460">
+            <ProgressBar x:Name="BatteryLevel" 
+                Foreground="Red"/>
+        </Border>
+        <TextBlock Text="0%"
+            FontSize="20" 
+            Foreground="White" 
+            HorizontalAlignment="Left" 
+            Margin="399,7,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Height="30" 
+            Width="40"/>
+        <Button Content="CONTROL" 
+            Command="{Binding DriveCommand}"  
+            x:Name="ControlButton"
+            BorderBrush="Black" 
+            BorderThickness="2"
+            HorizontalAlignment="Left"
+            Margin="330,440,0,0" 
+            VerticalAlignment="Top" 
+            Width="90" 
+            Height="40" 
+                 />
+        <Button>
+            <Button.Content>Serwer</Button.Content>
+            <Button.Name>SerwerButton</Button.Name>
+            <Button.Width>158</Button.Width>
+            <Button.Height>40</Button.Height>
+            <Button.VerticalAlignment>Top</Button.VerticalAlignment>
+            <Button.HorizontalAlignment>Left</Button.HorizontalAlignment>
+            <Button.Margin>334,395,0,0</Button.Margin>
+            <Button.BorderBrush>Black</Button.BorderBrush>
+            <Button.BorderThickness>2</Button.BorderThickness>
+            <Button.Visibility>Visible</Button.Visibility>
+        </Button>
+    </Grid>
+</Page>

@@ -1,0 +1,24 @@
+<UserControl x:Class="Driver.GUI.View.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+         
+             mc:Ignorable="d" 
+             d:DesignHeight="300" Width="654.8">
+    <Grid>
+        <ScrollViewer Margin="0,0,0.4,0">
+            <StackPanel MinWidth="200">
+                <TextBlock><Run Text="                                                                                   "/><Run Text="Instrukcja Obslugi"/></TextBlock>
+                <TextBlock Width="658" ><Run Text="1. Aby polaczyc sie z robotem nalezy z listy dostepnych robotow wybrac wybranego robota i kliknac"/><Run Text=" "/><Run Text="CONNECT"/></TextBlock>
+                <TextBlock x:Name="Test" ><Run Text="2. "/><Run Text="Nastepnie nalezy wcisnac przycisk reidentyfikacji."/></TextBlock>
+                <TextBlock Text="3. Jezeli chcemy zadac robotowi recznie punkty, nalezy wpisac punkty w odpowiednie pola, nastepnie wcisnac" />
+                <TextBlock FontSize="11"><Run Text="przycisk &quot;"/><Run Text="Add Point&quot;"/><Run Text=","/><Run Text=" a nastepnie "/><Run Text="&quot;CONTROL&quot;."/></TextBlock>
+                <TextBlock FontSize="11"><Run Text="4. "/><Run Text="Po wykonaniu podanych wyzej czynnosci, na mapce pojawi sie robot oraz jego dokladna lokalizacja."/></TextBlock>
+                <TextBlock FontSize="11" Text="5. W trakcie ruchu robota &quot;Nie nalezy wciskac zadnych innych przyciskow&quot;."/>
+                <TextBlock FontSize="11" Text="6. W razie niepowodzenia nalezy sprobowac sie rozlaczyc i polaczyc ponownie."/>
+                <TextBlock FontSize="11"><Run Text="7. Aplikacja umozliwia wykonanie &quot;Zadania 1&quot; oraz &quot;Zadania 3&quot;."/><LineBreak/><Run Text="8"/><Run Text=". Aby zrealizowac wykonanie zadan nalezy powtorzyc czynnosci z punktu 1 oraz 2"/><Run Text=" oraz wybrac odpowiednie zadanie."/><LineBreak/><Run Text="9. Po zakonczeniu wykonywania zadania, nalezy pamietac o rozlaczeniu z robotem, aby zwolnic robota."/><LineBreak/><Run Text="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Uwagi"/><LineBreak/><Run Text="1. "/><Run Text="Ladowanie zadania 3 zajmuje sporo czasu, w tym momencie nie nalezy przerywac dzialania kompilatora."/><LineBreak/><Run Text="2. Podanie blednego pliku XML spowoduje zatrzymanie sie aplikacji."/><LineBreak/><Run Text="3. Czasami aplikacja wymaga kilkukrotnnej proby polaczenia z robotem."/><LineBreak/><Run Text="4. Jezeli aplikacja nie wyswietla polozenia robota nalezy wykonac probe reidentyfikacji."/><LineBreak/><Run Text="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"/><Run Text="   "/><Run Text="Tworcy Aplikacji:"/><LineBreak/><Run Text="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"/><Run Text="1. Lukasz Aniszewski"/><LineBreak/><Run Text="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"/><Run Text="2"/><Run Text=". Mateusz Drozd"/><LineBreak/><Run Text="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;"/><Run Text="3. Tytus Mikolajczyk"/><LineBreak/><Run/></TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
